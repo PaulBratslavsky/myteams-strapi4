@@ -70,20 +70,21 @@
       "type": "string"
     },
     "avatarImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "jobTitle": {
       "type": "string"
     },
     "teams": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::team.team",
-      "mappedBy": "teamMember"
+      "inversedBy": "teamMembers"
     }
   }
 }
